@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    PAN Card Information
+{% endblock %}
+
+{% block style %}
+
+<style>
+    /* Additional styles for the PAN Card information page */
+    .pan-info-container {
+         width: 60%;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .pan-info-container h2 {
+        margin-bottom: 20px;
+        color: #333333;
+    }
+
+    .pan-info-container p {
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: #666666;
+    }
+
+    .pan-info-container .pan-label {
+        font-weight: bold;
+        color: #000000;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="pan-info-container">
+    <h2>Your Profile Information</h2>
+    <p><span class="pan-label">Name:</span> {{ name }}</p>
+    <p><span class="pan-label">Father's Name:</span> {{ father_name }}</p>
+    <p><span class="pan-label">Date of Birth:</span> {{ dob }}</p>
+    <p><span class="pan-label">PAN Number:</span> {{ pan }}</p>
+
+
+
+    <p><span class="pan-label">Aadhar Name:</span> {{ aadhar_name }}</p>
+    <p><span class="pan-label">Aadhar Date of Birth:</span> {{ aadhar_dob }}</p>
+    <p><span class="pan-label">Gender:</span> {{ aadhar_gender }}</p>
+    <p><span class="pan-label">Aadhar Number:</span> {{ aadhar_number }}</p>
+    <p><span class="pan-label">Phone:</span> {{ aadhar_Phone }}</p>
+    <p><span class="pan-label">Address:</span> {{ aadhar_address }}</p>
+    <p><span class="pan-label">PIN:</span> {{ pin }}</p>
+</div>
+{% endblock %}

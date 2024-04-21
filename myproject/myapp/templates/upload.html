@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Upload PAN AND Aadhar Card{% endblock %}
+
+{% block style %}
+<style>
+    .upload-form button {
+        width: 100%;
+        padding: .5em;
+        background-color: #61c0bf;
+        border: none;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: 600;
+        color: white;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    .upload-container {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<h2 class="upload-heading">Upload PAN AND Aadhar Card</h2>
+<div class="upload-container">
+    <form class="upload-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <label for="aadhar_pdf">Upload Aadhar Card PDF</label>
+        <input type="file" name="aadhar_pdf" id="aadhar_pdf" accept=".pdf">
+        <button type="submit">Upload</button>
+    </form>
+</div>
+{% endblock %}

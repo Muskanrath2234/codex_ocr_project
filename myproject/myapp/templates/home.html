@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Home
+{% endblock %}
+
+{% block style %}
+<style>
+    /* Notification styles */
+    .notification-container {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+    }
+
+    .notification {
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        position: relative;
+    }
+
+    .notification p {
+        margin: 0;
+    }
+
+    #cross {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+    }
+
+    /* Main container styles */
+    .main-container {
+        padding: 20px;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+    }
+
+    .profile-photo-container {
+        margin-right: 20px;
+    }
+
+    .profile-photo-container img {
+        border-radius: 50%;
+    }
+
+    .user-content-container h1 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+</style>
+{% endblock %}
+
+{% block content%}
+
+<main class="main-container">
+    <div class="container">
+        <div class="profile-photo-container">
+            <img src="{% static 'images/default_profile.png' %}" alt="User Image" width="100px">
+        </div>
+
+        <div class="user-content-container">
+           <h1>aadhar - pan </h1>
+        </div>
+    </div>
+</main>
+{% endblock %}
