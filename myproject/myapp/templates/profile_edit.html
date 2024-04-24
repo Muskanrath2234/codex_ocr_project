@@ -4,16 +4,65 @@
 {% block title %}
     Profile
 {% endblock %}
+{% block style %}
+<style>
+    .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.user-content-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-content-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-content-container li {
+    margin-bottom: 15px;
+}
+
+.user-content-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.user-content-container input[type="text"],
+.user-content-container input[type="date"] {
+    width: calc(100% - 10px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.user-content-container button {
+    padding: 10px 20px;
+    background-color: #61c0bf;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-content-container button:hover {
+    background-color: #61c0bf;
+}
+
+</style>
+{% endblock %}
 
 {% block content %}
 
 
 <form class="container" action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="profile-photo-container profile-photo-form-container">
-        <p class="profile-page-heading">Edit your profile</p>
-        <img src="{% if profile.Profile_img %}{{ profile.Profile_img.url }}{% else %}{% static 'images/default_profile.png' %}{% endif %}" alt="user-image" width="" srcset="">
-    </div>
 
     <div class="user-content-container user-profile-form-container">
         <ul>

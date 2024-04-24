@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Upload PAN AND Aadhar Card{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block content %}
+<div>
+    <h2>Upload PAN Card</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+</div>
+{% endblock %}

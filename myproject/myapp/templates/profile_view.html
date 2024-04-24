@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Upload PAN AND Aadhar Card{% endblock %}
+
+{% block style %}
+
+<style>
+    .profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-details {
+    font-size: 16px;
+}
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+    <h1>User Profile</h1>
+    {% if profile_data %}
+        <div class="profile-container">
+
+            </div>
+            <div class="profile-details">
+                <p>Name: {{ profile_data.name }}</p>
+                <p>Date of Birth: {{ profile_data.DOB }}</p>
+                <p>PAN: {{ profile_data.Pan }}</p>
+                <p>Father's Name: {{ profile_data.Fathers_Name }}</p>
+                <p>Aadhar Gender: {{ profile_data.aadhar_gender }}</p>
+                <p>Aadhar Number: {{ profile_data.aadhar_number }}</p>
+                <p>Aadhar Phone: {{ profile_data.aadhar_Phone }}</p>
+                <p>Aadhar Address: {{ profile_data.aadhar_address }}</p>
+                <p>PIN: {{ profile_data.pin }}</p>
+            </div>
+        </div>
+    {% else %}
+        <p>No profile found.</p>
+    {% endif %}
+ <a href="{% url 'Profile_edit' %}">Profile_edit</a>
+{% endblock %}

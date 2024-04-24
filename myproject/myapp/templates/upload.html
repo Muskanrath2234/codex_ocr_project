@@ -4,12 +4,12 @@
 {% block style %}
 <style>
     .upload-form button {
-        width: 100%;
+        width: 60%;
         padding: .5em;
         background-color: #61c0bf;
         border: none;
         text-align: center;
-        font-size: 1.2em;
+        font-size: 1 em;
         font-weight: 600;
         color: white;
         cursor: pointer;
@@ -22,15 +22,31 @@
         justify-content: center;
         align-items: center;
     }
+    .upload-heading{
+
+      border: none;
+
+        font-size: 1.2em; /* Increased font size for button */
+        font-weight: 600;
+        margin: 1em auto; /* Adjust margin for spacing */
+        text-align: center;
+        background-color: #61c0bf;
+         color: white;
+         width: 50%; /* Set container width */
+        margin: 1em auto; /* Center the container */
+
+        padding: 16px; /* Add padding for better spacing */
+
+    }
 </style>
 {% endblock %}
 
 {% block content %}
-<h2 class="upload-heading">Upload PAN AND Aadhar Card</h2>
+<h2 class="upload-heading">Upload Aadhar Card</h2>
 <div class="upload-container">
     <form class="upload-form" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+
         <label for="aadhar_pdf">Upload Aadhar Card PDF</label>
         <input type="file" name="aadhar_pdf" id="aadhar_pdf" accept=".pdf">
         <button type="submit">Upload</button>

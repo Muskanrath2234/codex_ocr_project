@@ -24,13 +24,12 @@ class Profile(models.Model):
     DOB = models.DateField(null=True,max_length=10,blank=True)
     Pan = models.CharField(null=True,max_length=10,blank=True)
     Fathers_Name  = models.CharField(null=True,max_length=200,blank=True)
-    Profile_img = models.ImageField(default="images/default_profile.png",upload_to='images',blank=True,null=True)
 
     aadhar_gender = models.CharField(null=True, blank=True, max_length=10)
-    aadhar_number = models.IntegerField(null=True, blank=True)
-    aadhar_Phone= models.PositiveIntegerField(null=True, blank=True)
+    aadhar_number = models.IntegerField(null=True, blank=True,max_length=12)
+    aadhar_Phone= models.PositiveIntegerField(null=True, blank=True,max_length=10)
     aadhar_address = models.TextField(null=True, blank=True)
-    pin= models.PositiveIntegerField(null=True, blank=True)
+    pin= models.PositiveIntegerField(null=True, blank=True,max_length=6)
 
     def __str__(self):
         return self.user.username + "'s Profile"

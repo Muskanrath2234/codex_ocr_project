@@ -6,72 +6,31 @@
 
 {% block style %}
 <style>
-    /* Notification styles */
-    .notification-container {
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1000;
-    }
+    .home{
 
-    .notification {
-        background-color: #f2f2f2;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        position: relative;
-    }
-
-    .notification p {
-        margin: 0;
-    }
-
-    #cross {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        cursor: pointer;
-    }
-
-    /* Main container styles */
-    .main-container {
-        padding: 20px;
-    }
-
-    .container {
-        display: flex;
-        align-items: center;
-    }
-
-    .profile-photo-container {
-        margin-right: 20px;
-    }
-
-    .profile-photo-container img {
-        border-radius: 50%;
-    }
-
-    .user-content-container h1 {
-        font-size: 24px;
-        color: #333;
-        margin-bottom: 10px;
+       padding: 20px;
     }
 </style>
 {% endblock %}
 
 {% block content%}
 
-<main class="main-container">
-    <div class="container">
-        <div class="profile-photo-container">
-            <img src="{% static 'images/default_profile.png' %}" alt="User Image" width="100px">
-        </div>
+<div class="home">
+    <h2>Welcome to Aadhar-PAN Data Extraction App</h2>
+    <p>This platform offers a seamless solution for updating your profile information using Aadhar or PAN card data. <br>Upload your Aadhar or PAN card details, and let our system automatically update your profile with the extracted information.</p>
 
-        <div class="user-content-container">
-           <h1>aadhar - pan </h1>
-        </div>
-    </div>
-</main>
+    <h3>How it works:</h3>
+    <ol>
+        <li><strong>Upload Aadhar or PAN Card Data:</strong> Simply upload your Aadhar or PAN card details through our user-friendly interface.</li>
+        <li><strong>Automated Profile Update:</strong> Our system will extract relevant information from your uploaded documents and update your profile accordingly.</li>
+        <li><strong>Easy Profile Management:</strong> Keep your profile up-to-date without the hassle of manual data entry.</li>
+    </ol>
+
+    <h3>Get Assistance:</h3>
+    <p>Encountering any issues or need assistance? Feel free to reach out to us. Our support team is here to help you.</p>
+
+    <h3>Contact Us:</h3>
+    <p>For any queries or assistance, please <a href="{% url 'contact' %}">contact us</a> and we'll be happy to assist you.</p>
+
+</div>
 {% endblock %}
